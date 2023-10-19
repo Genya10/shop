@@ -1,0 +1,45 @@
+
+header .logo{
+    font-weight: 600;
+    font-size: 24px;
+  }
+  .nav{
+    font-weight: 400;
+    list-style-type: none;
+    display: flex;
+    gap: 10px;
+    justify-content: end;
+    cursor: pointer;
+  }
+  .nav li:hover{
+    font-weight: 600;
+    transform: scale(1.1,1.1);
+    transition: all 1000ms;
+  }
+  .presentation{
+    margin: 50px 0;
+    background: url('../img/home-design.jpg') no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 500px;
+    position: relative;
+}
+.presentation::after{
+    width: 300px;
+    color: #fff;
+    content: 'The best product for your house';
+    position: absolute;
+    top: 60px;
+    left: 30px;
+    font-weight: 600;
+    font-size: 40px;
+}
+.presentation::before{
+    color: #ffffff;
+    content: 'on sale';
+    position: absolute;
+    top: 205px;
+    left: 30px;
+    font-weight: 400;
+    font-size: 20px;
+}
