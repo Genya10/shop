@@ -24,11 +24,21 @@ header .logo{
     right: 20px;
     top: 32px;
     cursor: pointer;
-    transition: color 500ms ease;
+    transition: color,transform 500ms ease;
     }
   .shopButton:hover,
   .shopButton.active{
     color: #dc3d3d;
+    transform: scale(1.5);
+  }
+  header .shopCart{
+    position: absolute;
+    top: 50px;
+    right: 0;
+    width: 450px;
+    min-height: 100px;
+    background-color: aqua;
+    z-index: 10;
   }
   .presentation{
     margin: 50px 0;
