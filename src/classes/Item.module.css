@@ -16,12 +16,14 @@
 }
 
 .item h3{
-    text-transform: lowercase;
+    text-transform: capitalize;
     padding: 3px;
+    margin-left: 5px;
 }
 .item p,
 .item b{
     padding: 5px;
+    margin-left: 10px;
 }
 .addToCart{
  position: absolute;

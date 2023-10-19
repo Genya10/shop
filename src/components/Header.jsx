@@ -1,5 +1,6 @@
 import React from "react";
 import cl from '../classes/Header.module.css';
+import {FaShoppingCart} from 'react-icons/fa'
 
 export const Header=()=>{
     return(
@@ -9,11 +10,11 @@ export const Header=()=>{
             </div>
             <ul className={cl.nav}>
                 <li>About us</li>
-                <li>About product</li>
-                <li>Our price</li>
+                <li>Contacts</li>
+                <li>Cabinet</li>
             </ul>
-            <div className={cl.presentation}>
-           
+            <FaShoppingCart className={cl.shopButton}/>
+            <div className={cl.presentation}>           
             </div>
         </header>
     )

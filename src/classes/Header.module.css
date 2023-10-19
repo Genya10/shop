@@ -1,4 +1,6 @@
-
+header{
+  position: relative;
+}
 header .logo{
     font-weight: 600;
     font-size: 24px;
@@ -10,11 +12,23 @@ header .logo{
     gap: 10px;
     justify-content: end;
     cursor: pointer;
+    margin-right: 60px;
   }
   .nav li:hover{
     font-weight: 600;
     transform: scale(1.1,1.1);
     transition: all 1000ms;
+  }
+  .shopButton{
+    position: absolute;
+    right: 20px;
+    top: 32px;
+    cursor: pointer;
+    transition: color 500ms ease;
+    }
+  .shopButton:hover,
+  .shopButton.active{
+    color: #dc3d3d;
   }
   .presentation{
     margin: 50px 0;
