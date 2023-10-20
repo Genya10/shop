@@ -1,10 +1,12 @@
 import React from "react";
 import { useState } from "react";
 import { Item } from "./Item";
-import cl from '../classes/Items.module.css'
+import cl from '../classes/Items.module.css';
+import { useEffect } from "react";
 
 export const Items=(props)=>{
-    const[items,setItems]=useState([
+    const [orders,setOrders]=useState([]);
+    const [items,setItems]=useState([
         {
          id:1,
          title:'char',
@@ -48,10 +50,18 @@ export const Items=(props)=>{
          price:'29'
         },
 ]);
+ const addToOrder=(item)=>{
+    setOrders([...orders,item],
+        )} 
+ useEffect(()=>{
+console.log(orders)
+ },[orders])
     return(
         <main>
      {items.map((item)=>{
-        return <Item key={item.id} item={item}/>
+        return <Item key={item.id} 
+                     item={item}
+                     addToOrder={addToOrder}/>
      })}
         </main>
     )

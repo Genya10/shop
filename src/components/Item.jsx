@@ -7,7 +7,9 @@ export const Item =(props)=>{
         <h3>{props.item.title}</h3>
         <p>{props.item.desc}</p>
         <b>{props.item.price}$</b>
-        <div className={cl.addToCart}>+</div>
+        <div className={cl.addToCart}
+        onClick={()=>{props.addToOrder(props.item)}}
+        >+</div>
         </div>
     )
 }

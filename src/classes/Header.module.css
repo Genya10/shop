@@ -31,7 +31,7 @@ header .logo{
     color: #dc3d3d;
     transform: scale(1.5);
   }
-  header .shopCart{
+ .shopCart{
     position: absolute;
     top: 50px;
     right: 0;

@@ -5,7 +5,6 @@ import { useState } from "react";
 
 export const Header=()=>{
     let [cartOpen,setCartOpen]=useState(false);
-    let [active,setActive]=useState(false)
     return(
         <header>
             <div>
