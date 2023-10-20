@@ -4,14 +4,17 @@ import { Header } from './components/Header';
 import { Footer } from './components/Footer';
 import { useState } from 'react';
 import { Items } from './components/Items';
+import { OrdersProvider } from './components/OrdersProvider';
 
 const App =() =>{
 
       return (
     <div className="wrapper">
+      <OrdersProvider>
   <Header />
   <Items/>
   <Footer/>
+  </OrdersProvider>
     </div>
   );
 }

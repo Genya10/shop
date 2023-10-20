@@ -3,9 +3,10 @@ import { useState } from "react";
 import { Item } from "./Item";
 import cl from '../classes/Items.module.css';
 import { useEffect } from "react";
+import { useOrders } from "./OrdersProvider";
 
 export const Items=(props)=>{
-    const [orders,setOrders]=useState([]);
+    const [orders,setOrders]=useOrders();
     const [items,setItems]=useState([
         {
          id:1,
