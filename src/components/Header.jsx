@@ -9,28 +9,37 @@ export const Header=()=>{
    
     let [cartOpen,setCartOpen]=useState(false);
     const [orders,setOrders]=useOrders();
+   /* const showOrders=()=>{
+        orders.map((el)=>{
+         return <Order key={el.id} item={el}/>
+        })
+    }*/
+    const showNothing=()=>{
+       return <h3 className={cl.showNothing}>Bassket is empty</h3>
+    }
 
-    return(
-        <header>
-            <div>
-                <span className={cl.logo}>House Staff</span>
-            </div>
-            <ul className={cl.nav}>
-                <li>About us</li>
-                <li>Contacts</li>
-                <li>Cabinet</li>
-            </ul>
-            <FaShoppingCart onClick={()=>setCartOpen(cartOpen=!cartOpen)}
-                            className={` ${cl.shopButton} ${cartOpen && cl.active} `}/>
-                            {cartOpen && (
-                                <div className={cl.shopCart}>
-                                    {orders.map((el)=>(
-                                   <Order key={el.id} item={el}/>
-                                    ))}
-                                </div>
-                            )}
-            <div className={cl.presentation}>           
-            </div>
-        </header>
-    )
+    return (
+      <header>
+        <div>
+          <span className={cl.logo}>House Staff</span>
+        </div>
+        <ul className={cl.nav}>
+          <li>About us</li>
+          <li>Contacts</li>
+          <li>Cabinet</li>
+        </ul>
+        <FaShoppingCart
+          onClick={() => setCartOpen((cartOpen = !cartOpen))}
+          className={` ${cl.shopButton} ${cartOpen && cl.active} `}
+        />
+        {cartOpen && (
+          <div className={cl.shopCart}>
+            {orders.length > 0
+              ? orders.map((el) => <Order key={el.id} item={el} />)
+              : showNothing()}
+          </div>
+        )}
+        <div className={cl.presentation}></div>
+      </header>
+    );
 }

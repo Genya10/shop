@@ -36,9 +36,16 @@ header .logo{
     top: 50px;
     right: 0;
     width: 450px;
-    min-height: 100px;
-    background-color: aqua;
+    text-transform: capitalize;
+    background-color: rgba(0, 255, 255, 0.837);
+    padding: 10px;
     z-index: 10;
+    border-radius: 10px;
+    padding-bottom: 0px;
+  }
+  .showNothing{
+    padding-bottom: 8px;
+    padding-left: 15px;
   }
   .presentation{
     margin: 50px 0;
