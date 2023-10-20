@@ -2,7 +2,20 @@
     display: flex;
     gap: 5px;
     margin-bottom: 10px;   
+    position: relative;
 }
 .item img{
     width: 80px;
+}
+.deleteIcon{
+    color: #000000c1;
+    position: absolute;
+    top: 15px;
+    right: 10px;
+    cursor: pointer;
+}
+.deleteIcon:hover{
+    color: #000;
+    transform: scale(1.3);
+    transition: 500ms ease;
 }

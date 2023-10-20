@@ -33,7 +33,7 @@ header .logo{
   }
  .shopCart{
     position: absolute;
-    top: 50px;
+    top: 60px;
     right: 0;
     width: 450px;
     text-transform: capitalize;
@@ -46,6 +46,12 @@ header .logo{
   .showNothing{
     padding-bottom: 8px;
     padding-left: 15px;
+  }
+  .total{
+    font-weight: 600;
+    font-size: 20px;
+    padding-left: 15px;
+    padding-bottom: 10px;
   }
   .presentation{
     margin: 50px 0;

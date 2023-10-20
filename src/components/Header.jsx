@@ -9,6 +9,16 @@ export const Header=()=>{
    
     let [cartOpen,setCartOpen]=useState(false);
     const [orders,setOrders]=useOrders();
+    const [total,setTotal]=useState(0);
+
+      useEffect(()=>{
+        let newTotal = 0;
+        orders.forEach((el)=>{
+            newTotal += Number(el.price);
+        });
+        setTotal(newTotal);
+      },[orders])
+
    /* const showOrders=()=>{
         orders.map((el)=>{
          return <Order key={el.id} item={el}/>
@@ -16,6 +26,9 @@ export const Header=()=>{
     }*/
     const showNothing=()=>{
        return <h3 className={cl.showNothing}>Bassket is empty</h3>
+    }
+    const deleteOrder=(id)=>{
+        setOrders(orders.filter(el => el.id !== id));
     }
 
     return (
@@ -35,7 +48,11 @@ export const Header=()=>{
         {cartOpen && (
           <div className={cl.shopCart}>
             {orders.length > 0
-              ? orders.map((el) => <Order key={el.id} item={el} />)
+              ?(
+                <div>
+               {orders.map((el) => <Order key={el.id} item={el} deleteOrder={deleteOrder}/>) } 
+                  <div className={cl.total}>Total:{total}$</div>
+                  </div> )
               : showNothing()}
           </div>
         )}
