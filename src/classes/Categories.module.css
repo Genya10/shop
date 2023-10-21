@@ -1,0 +1,18 @@
+
+.categories div{
+    font-weight: 600;
+    font-size: 18px;
+    display: inline-block;
+    padding:3px 20px;
+    background-color: #2f2f2fae;
+    margin-bottom: 15px;
+    margin-left: 10px;
+    border-radius: 16px;
+    cursor: pointer;
+    border: 1px solid black;
+}
+.categories div:hover{
+    background-color: rgba(0, 0, 0, 0.801);
+    color: #fff;
+    border: 1px solid silver;
+}

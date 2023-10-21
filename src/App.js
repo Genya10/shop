@@ -5,6 +5,7 @@ import { Footer } from './components/Footer';
 import { useState } from 'react';
 import { Items } from './components/Items';
 import { OrdersProvider } from './components/OrdersProvider';
+import { Categories } from './components/Categories';
 
 const App =() =>{
 
@@ -12,6 +13,7 @@ const App =() =>{
     <div className="wrapper">
       <OrdersProvider>
   <Header />
+  <Categories/>
   <Items/>
   <Footer/>
   </OrdersProvider>
