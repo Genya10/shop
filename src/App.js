@@ -7,6 +7,7 @@ import { Items } from './components/Items';
 //import { OrdersProvider } from './components/OrdersProvider';
 import { Categories } from './components/Categories';
 import { useEffect } from 'react';
+import { ShowItem } from './components/ShowItem';
 
 const App =() =>{
 const [orders,setOrders] = useState([]);
@@ -61,6 +62,8 @@ const [items,setItems]= useState([
   },
 ]);
 const [currentItems,setCurrentItems]=useState([]);
+let [showItem,setShowItem] = useState(false);
+let [fullItem,setFullItem] = useState({});
 
 useEffect(()=>{
 setCurrentItems(items);
@@ -73,15 +76,32 @@ const chooseCategory=(category)=>{
   }
   setCurrentItems(items.filter(el => el.category === category))
 }
+const changeShowItem=(item)=>{
+  setFullItem(item);
+  setShowItem(showItem = !showItem);
+}
+const addToOrder = (item) => {
+  let isInArray = false;
+  orders.forEach((el) => {
+    if (el.id === item.id) {
+      isInArray = true;
+    }
+  });
+  if (!isInArray) setOrders([...orders, item]);
+};
+const closedFullItem=()=>{
+  setShowItem(false);
+}
 
       return (
     <div className="wrapper">
      {/*} <OrdersProvider>*/}
   <Header orders={orders} setOrders={setOrders}/>
   <Categories chooseCategory={chooseCategory}/>
-  <Items items={items}  
-         currentItems={currentItems} setCurrentItems={setCurrentItems}
-         orders={orders} setOrders={setOrders}/>
+  <Items items={items} currentItems={currentItems} addToOrder={addToOrder}        
+         orders={orders} setOrders={setOrders} changeShowItem={changeShowItem}/>
+       {showItem && <ShowItem item={fullItem} 
+             addToOrder={addToOrder} closedFullItem={closedFullItem}/>} 
   <Footer/>
  {/*} </OrdersProvider>*/}
     </div>
