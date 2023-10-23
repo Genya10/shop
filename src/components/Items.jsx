@@ -6,51 +6,15 @@ import { useEffect } from "react";
 import { useOrders } from "./OrdersProvider";
 
 export const Items=(props)=>{
-  const [orders, setOrders] = useOrders();
-  const [items, setItems] = useState([
-    {
-      id: 1,
-      title: "char",
-      img: "/char.jpg",
-      desc: "Lorem insut roma description",
-      price: "59",
-    },
-    {
-      id: 2,
-      title: "table",
-      img: "/table.jpg",
-      desc: "Lorem insut roma description",
-      price: "110",
-    },
-    {
-      id: 3,
-      title: "desk",
-      img: "desk.jpg",
-      desc: "Lorem insut roma description",
-      price: "99",
-    },
-    {
-      id: 4,
-      title: "bed",
-      img: "bed.jpg",
-      desc: "Lorem insut roma description",
-      price: "120",
-    },
-    {
-      id: 5,
-      title: "cup",
-      img: "cup.jpg",
-      desc: "Lorem insut roma description",
-      price: "39",
-    },
-    {
-      id: 6,
-      title: "plate",
-      img: "plate.jpg",
-      desc: "Lorem insut roma description",
-      price: "29",
-    },
-  ]);
+  const [orders, setOrders,items,setItems] = useOrders();
+  const [currentItems,setCurrentItems]=useState([]);
+  console.log(items);
+
+  useEffect(()=>{
+ setCurrentItems(items);
+  },[])
+  console.log(currentItems);
+ 
   const addToOrder = (item) => {
     let isInArray = false;
     orders.forEach((el) => {
@@ -63,7 +27,7 @@ export const Items=(props)=>{
 
   return (
     <main>
-      {items.map((item) => {
+      {currentItems.map((item) => {
         return <Item key={item.id} 
                  item={item} 
                  addToOrder={addToOrder} />;

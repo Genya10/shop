@@ -20,11 +20,21 @@ export const Categories=()=>{
             key:'dishes',
             name:'Dishes'
         },
+        {
+            key:'sofa',
+            name:'Sofa'
+        }
     ])
+    const chooseCategory=(category)=>{
+        console.log(category)
+    }
+
     return(
         <div className={cl.categories}>
           {categories.map((el)=>
-    <div key={el.key}>{el.name}</div>
+         <div key={el.key} 
+            onClick={()=>{chooseCategory(el.key)}}>
+            {el.name}</div>
 )}
         </div>
     )
