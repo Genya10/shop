@@ -1,7 +1,8 @@
-import React from "react";
+
+/*import React,{useEffect} from "react";
 import { useState,useContext,createContext } from "react";
 
-const OrdersContext = createContext();
+export const OrdersContext = createContext();
 
 export const OrdersProvider=({children})=>{
   
@@ -58,7 +59,7 @@ const [items,setItems]= useState([
 ])
 
     return(
-      <OrdersContext.Provider value={[orders,setOrders,items,setItems]}>
+      <OrdersContext.Provider value={[orders,setOrders,items,setItems]}>         
  {children}
       </OrdersContext.Provider>
     )
@@ -66,4 +67,4 @@ const [items,setItems]= useState([
 
 export const useOrders=()=>{
     return useContext(OrdersContext);
-}
+}*/

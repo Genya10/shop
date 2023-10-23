@@ -5,10 +5,10 @@ import { useState } from "react";
 import { useOrders } from "./OrdersProvider";
 import { Order } from "./Order";
 
-export const Header=()=>{
+export const Header=({orders,setOrders})=>{
    
     let [cartOpen,setCartOpen]=useState(false);
-    const [orders,setOrders]=useOrders();
+    //const [orders,setOrders]=useOrders();
     const [total,setTotal]=useState(0);
 
       useEffect(()=>{
