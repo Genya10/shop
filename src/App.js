@@ -14,8 +14,8 @@ const [orders,setOrders] = useState([]);
 const [items,setItems]= useState([
   {
     id: 1,
-    title: "char",
-    img: "/char.jpg",
+    title: "chair regular",
+    img: "/chair.png",
     desc: "Lorem insut roma description",
     category:'chairs',
     price: "59",
@@ -38,15 +38,15 @@ const [items,setItems]= useState([
   },
   {
     id: 4,
-    title: "bed",
+    title: "bed white",
     img: "bed.jpg",
     desc: "Lorem insut roma description",
     category:'sofa',
-    price: "120",
+    price: "420",
   },
   {
     id: 5,
-    title: "cup",
+    title: "cup yellow",
     img: "cup.jpg",
     desc: "Lorem insut roma description",
     category:'dishes',
@@ -54,12 +54,37 @@ const [items,setItems]= useState([
   },
   {
     id: 6,
-    title: "plate",
+    title: "plate green",
     img: "plate.jpg",
     desc: "Lorem insut roma description",
     category:'dishes',
     price: "29",
   },
+  {
+    id: 7,
+    title: "sofa corner",
+    img: "sofa.jpeg",
+    desc: "Lorem insut roma description",
+    category:'sofa',
+    price: "329",
+  },
+  {
+    id: 8,
+    title: "chair rotating",
+    img: "chair1.jpg",
+    desc: "Lorem insut roma description",
+    category:'chairs',
+    price: "129",
+  },
+  {
+    id: 9,
+    title: "sofa beige",
+    img: "sofa2.jpg",
+    desc: "Lorem insut roma description",
+    category:'sofa',
+    price: "380",
+  },
+
 ]);
 const [currentItems,setCurrentItems]=useState([]);
 let [showItem,setShowItem] = useState(false);
