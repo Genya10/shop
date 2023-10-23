@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import cl from '../classes/Categories.module.css';
 
-export const Categories=()=>{
+export const Categories=({chooseCategory})=>{
 
     const [categories,setCategories]=useState([
         {
@@ -24,11 +24,8 @@ export const Categories=()=>{
             key:'sofa',
             name:'Sofa'
         }
-    ])
-    const chooseCategory=(category)=>{
-        console.log(category)
-    }
-
+      ]);
+      
     return(
         <div className={cl.categories}>
           {categories.map((el)=>

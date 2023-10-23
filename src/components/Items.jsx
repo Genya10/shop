@@ -5,16 +5,9 @@ import cl from '../classes/Items.module.css';
 import { useEffect } from "react";
 //import { useOrders } from "./OrdersProvider";
 
-export const Items=({items,orders,setOrders})=>{
-
+export const Items=({items,orders,setOrders,currentItems,setCurrentItems})=>{
   //const [orders, setOrders,items,setItems] = useOrders();
 
- const [currentItems,setCurrentItems]=useState([]);
- // console.log(items);
-
-  useEffect(()=>{
- setCurrentItems(items);
-  },[])
   const addToOrder = (item) => {
     let isInArray = false;
     orders.forEach((el) => {

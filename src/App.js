@@ -2,10 +2,11 @@ import React from 'react';
 import './App.css';
 import { Header } from './components/Header';
 import { Footer } from './components/Footer';
-import { useState } from 'react';
+import { useState} from 'react';
 import { Items } from './components/Items';
 //import { OrdersProvider } from './components/OrdersProvider';
 import { Categories } from './components/Categories';
+import { useEffect } from 'react';
 
 const App =() =>{
 const [orders,setOrders] = useState([]);
@@ -58,14 +59,28 @@ const [items,setItems]= useState([
     category:'dishes',
     price: "29",
   },
-])
+]);
+const [currentItems,setCurrentItems]=useState([]);
+
+useEffect(()=>{
+setCurrentItems(items);
+},[])
+
+const chooseCategory=(category)=>{
+  if(category === 'all'){
+    setCurrentItems(items)
+    return;
+  }
+  setCurrentItems(items.filter(el => el.category === category))
+}
 
       return (
     <div className="wrapper">
      {/*} <OrdersProvider>*/}
   <Header orders={orders} setOrders={setOrders}/>
-  <Categories/>
+  <Categories chooseCategory={chooseCategory}/>
   <Items items={items}  
+         currentItems={currentItems} setCurrentItems={setCurrentItems}
          orders={orders} setOrders={setOrders}/>
   <Footer/>
  {/*} </OrdersProvider>*/}
