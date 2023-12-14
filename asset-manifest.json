@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/github.io/shop/static/css/main.357a14d9.css",
+    "main.js": "/github.io/shop/static/js/main.0662c98b.js",
+    "static/js/787.23170c61.chunk.js": "/github.io/shop/static/js/787.23170c61.chunk.js",
+    "static/media/home-design.jpg": "/github.io/shop/static/media/home-design.0dac17576e026dd7e45d.jpg",
+    "index.html": "/github.io/shop/index.html",
+    "main.357a14d9.css.map": "/github.io/shop/static/css/main.357a14d9.css.map",
+    "main.0662c98b.js.map": "/github.io/shop/static/js/main.0662c98b.js.map",
+    "787.23170c61.chunk.js.map": "/github.io/shop/static/js/787.23170c61.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.357a14d9.css",
+    "static/js/main.0662c98b.js"
+  ]
+}
